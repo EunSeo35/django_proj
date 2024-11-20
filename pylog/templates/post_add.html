@@ -1,0 +1,37 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel = 'stylesheet' href="{% static 'css/style.css'%}"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+        <div id = "navbar">
+            <span> 글 작성 </span>
+        </div>
+        <br>
+
+        <div id = "post-add" >
+        <h1> Post Add</h1>
+        <form method="POST" enctype="multipart/form-data"> <!-- <form method = "GET"> key & value 표시  --> 
+            {% csrf_token %} <!--url에 표시 되지 않도록 데이터 숨김 --> 
+            <div>
+                <label> 제목</label>
+                <input name ="title" type = text>
+            </div>
+            <div>
+                <label> 내용 </label>
+                <textarea name = "content" cols="50" rows = "10"></textarea>
+            </div>   
+            <div>
+                <label>썸네일</label>
+                <input type = "file" name="thumbnail">
+            </div>
+            <button type = "submit" class= "btn btn-primary">작성</button>
+        </form>
+    </div>
+</body>
+</html>
