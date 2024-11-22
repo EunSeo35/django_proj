@@ -46,21 +46,27 @@ import sqlite3
 conn = sqlite3.connect('book.db')
 cursor = conn.cursor()
 
-#테이블 생성 
-cursor.execute(
-    '''
-    CREATE TABLE IF NOT EXISTS books(
-        rank INTEGER,
-        title TEXT,
-        author TEXT,
-        price TEXT
-    )
-    '''
-)
+# #테이블 생성 
+# cursor.execute(
+#     '''
+#     CREATE TABLE IF NOT EXISTS books(
+#         rank INTEGER,
+#         title TEXT,
+#         author TEXT,
+#         price TEXT
+#     )
+#     '''
+# )
 
-#데이터 삽입 
-for book in book_list:
-    cursor.execute('INSERT INTO books VALUES(?,?,?,?)', book.to_list())
+# #데이터 삽입 
+# for book in book_list:
+#     cursor.execute('INSERT INTO books VALUES(?,?,?,?)', book.to_list())
+
+cursor.execute('select * from books')
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
 
 conn.commit()
 conn.close()
