@@ -1,0 +1,7 @@
+for 입찰공고 in 입찰공고목록:
+#     공고정보 = 입찰공고.find_elements(by=By.TAG_NAME, value='td')
+#     공고명 = 공고정보[3].text
+#     print(공고정보[1].text)
+#     공고주소 = 공고정보[3].find_element(by=By.TAG_NAME, value='a').get_property('href')
+#     print(공고명, 공고주소)
+    
